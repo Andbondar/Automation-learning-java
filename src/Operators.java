@@ -34,6 +34,5 @@ public class Operators {
         //third b-- (post-increment)
         System.out.println("++a * b-- = " + prec);
         System.out.println("a = "+ a + "; b = " + b);
-        System.out.println("(++a) * (b--) = "+ (++a * b--));
     }
 }
