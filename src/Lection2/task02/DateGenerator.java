@@ -1,7 +1,5 @@
 package Lection2.task02;
-import java.util.Calendar;
 import java.util.GregorianCalendar;
-
 import static java.util.Calendar.*;
 
 /**
@@ -12,7 +10,7 @@ public class DateGenerator {
         public static void main(String[] args) {
 
             GregorianCalendar gc = new GregorianCalendar();
-            int year = randBetween(1900, 2010);
+            int year = randBetween(1900, 2015);
             gc.set(gc.YEAR, year);
             int dayOfYear = randBetween(1, gc.getActualMaximum(DAY_OF_YEAR));
             gc.set(gc.DAY_OF_YEAR, dayOfYear);
@@ -25,7 +23,7 @@ public class DateGenerator {
 
         public static String getDate() {
         GregorianCalendar gc = new GregorianCalendar();
-        int year = randBetween(1900, 2010);
+        int year = randBetween(1900, 2015);
         gc.set(gc.YEAR, year);
         int dayOfYear = randBetween(1, gc.getActualMaximum(DAY_OF_YEAR));
         gc.set(gc.DAY_OF_YEAR, dayOfYear);
