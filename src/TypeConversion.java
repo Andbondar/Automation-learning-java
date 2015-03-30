@@ -90,5 +90,35 @@ public class TypeConversion {
         System.out.println(myFloat.toString());
         System.out.println(myInt.toString());
         System.out.println(myBool.toString());
+
+
+            //Char to String
+        System.out.println();
+        char myChar = 'T';
+        myString = Character.toString(myChar);
+        System.out.println(myString);
+        System.out.println("" + myChar + myChar);
+        System.out.println(String.valueOf(myChar));
+        String stringFromChar = new String(new char[] {myChar});
+        System.out.println(stringFromChar);
+
+
+            //Char to Int
+        System.out.println();
+        myChar = '9';
+        System.out.println(Character.getNumericValue(myChar));
+        System.out.println(Character.digit(myChar,10));
+
+
+            //Numbers conversion
+        System.out.println();
+        myInt = 123456;
+        System.out.println((float)myInt);
+        System.out.println((double)myInt);
+        long myLong_new = 214748364;
+        System.out.println((int)myLong_new);
+        double myDouble_new = 987654431;
+        System.out.println((int)myDouble_new);
+
     }
 }
