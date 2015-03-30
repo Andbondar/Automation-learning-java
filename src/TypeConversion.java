@@ -80,7 +80,15 @@ public class TypeConversion {
         System.out.println(myBool);
         myString = "true";
         System.out.println(Boolean.valueOf(myBool));
+        System.out.println(Boolean.parseBoolean(myString));
 
 
+            //Numbers to String
+        System.out.println();
+        System.out.println(myLong.toString());
+        System.out.println(myDouble.toString());
+        System.out.println(myFloat.toString());
+        System.out.println(myInt.toString());
+        System.out.println(myBool.toString());
     }
 }
