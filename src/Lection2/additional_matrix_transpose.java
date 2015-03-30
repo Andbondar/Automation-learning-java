@@ -3,6 +3,7 @@ package Lection2;
 /**
  * Created by Student on 3/30/2015.
  */
+//we will create transposed matrix for initial populated matrix 4x4
 public class additional_matrix_transpose {
     public static void main(String[] args) {
 
