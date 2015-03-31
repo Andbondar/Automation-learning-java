@@ -8,7 +8,7 @@ import java.util.List;
  * Created by bondar on 3/31/2015.
  */
 //I found it here http://andrdev.blogspot.com/2011/02/simple-random-name-generator.html
-public class StringGenerator {
+public class CharNameGenerator {
     public static void main(String[] args) {
         NameGenerator gen = new NameGenerator();
         for (int i = 0; i < 30; i++) { System.out.println(gen.getName()); }
