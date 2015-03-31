@@ -12,7 +12,7 @@ public class ParseRandomString_level_1 {
 
         String analyzedString = characterName + " was born " + birthDate;
         System.out.println(analyzedString);
-        String extractedDate = extractDate(analyzedString);
+        String extractedDate = extractDate(analyzedString);//date is extracted using regexp specific for this string
         System.out.println("Date: " + extractedDate);
     }
 }
