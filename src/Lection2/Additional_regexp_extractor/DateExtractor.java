@@ -1,7 +1,11 @@
 package Lection2.Additional_regexp_extractor;
 
 import java.lang.reflect.Array;
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -49,16 +53,39 @@ public class DateExtractor {
         return "No date found";
     }
 
-    //Advanced Date extractor and unifier
-    public static String getUnifiedDateFromString(String inputString){
-        for (int i = 0; i < 4; i++){
-            //Pattern pattern = Pattern.compile();//check string by all regexps. If date is found - return it
-            //Matcher matcher = pattern.matcher(inputString);
+    //Advanced Date extractor and unifier. Returns date
+    public static Date getUnifiedDateFromString(String inputString) throws ParseException {
+        Date foundDate = new Date();
+        List<String> regExpressions = new ArrayList<String>();
+        regExpressions.add("[0-9]{2}-[0-9]{2}-[0-9]{4}");//DD-MM-YYYY
+        regExpressions.add("[0-9]{2}-[A-Z]{3}-[0-9]{4}");//DD-MON-YYYY
+        regExpressions.add("[0-9]{2}\\.[0-9]{2}\\.[0-9]{4}");//DD.MM.YYYY
+        regExpressions.add("[A-Z]\\w* [0-9]{1,2}, [0-9]{4}");//March 12, 2011
+
+        for (int i = 0; i < regExpressions.size(); i++){
+            Pattern pattern = Pattern.compile(regExpressions.get(i));//check regexps where order of values is DD-MM-YYYY
+            Matcher matcher = pattern.matcher(inputString);
+            if (matcher.find()){
+                DateFormat format = new SimpleDateFormat();
+                switch (i){
+                    case 0://DD-MM-YYYY
+                        format = new SimpleDateFormat("dd-MM-yyyy");
+                        break;
+                    case 1://DD-MON-YYYY
+                        format = new SimpleDateFormat("dd-MMM-yyyy");
+                        break;
+                    case 2://DD.MM.YYYY
+                        format = new SimpleDateFormat("dd.MM.yyyy");
+                        break;
+                    case 3://March 12, 2011
+                        format = new SimpleDateFormat("MMMMM dd, yyyy");
+                        break;
+                }
+                foundDate = format.parse(matcher.group());
+            }
         }
 
-
-
-        return "no date found";
+        return foundDate;
     }
 }
 
