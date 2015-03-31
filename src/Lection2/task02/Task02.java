@@ -8,6 +8,7 @@ import java.util.Date;
 public class Task02 {
     public static void main(String[] args) {
         String myDate = DateGenerator.getDate();
+        System.out.println(myDate);
         String[] parts = myDate.split("-");
         int month = Integer.parseInt(parts[1]);
         switch (month){
