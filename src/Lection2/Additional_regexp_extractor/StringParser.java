@@ -8,7 +8,7 @@ import Lection2.task02.DateGenerator;
 public class StringParser {
     public static void main(String[] args) {
         String characterName = StringGenerator.GenerateOneName();//Random character name is generated
-        String birthDate = Lection2.task02.DateGenerator.getDatewithInterval(1950, 1990);//random birth date is generated
+        String birthDate = Lection2.task02.DateGenerator.getDatewithInterval(1950, 1990);//random birth date is generated. Date generator from task2 is used
         System.out.println(characterName + " was born " + birthDate);
     }
 }

@@ -14,7 +14,7 @@ public class StringGenerator {
         for (int i = 0; i < 30; i++) { System.out.println(gen.getName()); }
     }
 
-    public static String GenerateOneName(){
+    public static String GenerateOneName(){//I added this to extract exactly one name
         NameGenerator gen = new NameGenerator();
         return gen.getName();
     }
