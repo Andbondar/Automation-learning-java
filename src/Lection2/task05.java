@@ -11,13 +11,11 @@ public class task05 {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
-        int sum = 0, add = 0;
+        int sum = 0;
         String userInput = "0";
 
-        while (!("ñóììà".equals(userInput))){
-            add = Integer.parseInt(userInput);
-            sum = sum+add;
-            System.out.println(sum);
+        while (!("ÑÑƒĞ¼Ğ¼Ğ°".equals(userInput))){
+            sum = sum+Integer.parseInt(userInput);
             userInput = reader.readLine();
         }
         System.out.println(sum);
