@@ -19,6 +19,7 @@ public class StringParser {
         Pattern pattern = Pattern.compile("[0-9]{1,4}[.-][[0-9]\\w]{1,3}[.-][0-9]{1,4}");//pattern matches dates. Month can be specified either by number or by 3-letter name like 'JUN'
         Matcher matcher = pattern.matcher(analyzedString);
         if (matcher.find()) System.out.println("Date: " + matcher.group());
+        else System.out.println("No date found");
     }
 }
 
