@@ -13,7 +13,7 @@ import java.util.regex.Pattern;
 public class StringParser {
     public static void main(String[] args) {
         String characterName = StringGenerator.GenerateOneName();//Random character name is generated
-        String birthDate = Lection2.task02.DateGenerator.getDatewithInterval(1950, 1990);//random birth date is generated. Date generator from task2 is used
+        String birthDate = Lection2.task02.DateGenerator.getDateWithInterval(1950, 1990);//random birth date is generated. Date generator from task2 is used
 
         String analyzedString = characterName + " was born " + birthDate;
         System.out.println(analyzedString);

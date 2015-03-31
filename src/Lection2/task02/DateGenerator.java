@@ -30,7 +30,7 @@ public class DateGenerator {
             return(gc.get(YEAR) + "-" + gc.get(gc.MONTH) + "-" + gc.get(gc.DAY_OF_MONTH));
         }
 
-        public static String getDatewithInterval(int startYear, int endYear) {//generate random date in the specified year interval
+        public static String getDateWithInterval(int startYear, int endYear) {//generate random date in the specified year interval
             GregorianCalendar gc = new GregorianCalendar();
             int year = randBetween(startYear, endYear);
             gc.set(gc.YEAR, year);
