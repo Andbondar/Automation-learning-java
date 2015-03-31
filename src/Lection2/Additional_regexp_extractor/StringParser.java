@@ -8,6 +8,8 @@ import java.util.regex.Pattern;
 /**
  * Created by bondar on 3/31/2015.
  */
+
+// In this class string is generated and then parsed to extract the date in a specified format
 public class StringParser {
     public static void main(String[] args) {
         String characterName = StringGenerator.GenerateOneName();//Random character name is generated
