@@ -31,6 +31,6 @@ public class ParseInputString_level_1 {
 
         DateFormat dateFormat = new SimpleDateFormat("E, MMM dd yyyy");
         System.out.println("Date(non-formatted): " + extractedDate);
-        System.out.println("Date(unified format): " + dateFormat.format(extractedDate_type2));
+        if (!"No date found".equals(extractedDate)) System.out.println("Date(unified format): " + dateFormat.format(extractedDate_type2));
     }
 }
