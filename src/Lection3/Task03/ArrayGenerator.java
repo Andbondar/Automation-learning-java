@@ -21,4 +21,16 @@ public class ArrayGenerator {
         return Arrays.copyOf(generatedArray, size);
     }
 
+    public static int[][] generateSquareMatrixBySize(int size){
+        int[][] randomMatrix = new int[size][size];
+        Random generator = new Random();
+
+        for (int i = 0; i < size; i++) {
+            for (int j = 0; j < size; j++) {
+                randomMatrix[i][j] = generator.nextInt(1001)-500;//generates random value in interval [-500, 500]
+            }
+        }
+        return randomMatrix;
+    }
+
 }
