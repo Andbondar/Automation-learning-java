@@ -1,5 +1,7 @@
-package Lection3;
+package Lection3.TaskAdditional_getDayNumberInYear;
 
+import java.io.BufferedReader;
+import java.io.InputStreamReader;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -7,7 +9,7 @@ import java.util.GregorianCalendar;
 /**
  * Created by Student on 4/1/2015.
  */
-public class GetDayInYear_additional_task {
+public class GetDayInYear_CurrentDate_additional_task {
     public static void main(String[] args) {
         Date currentDate = new Date();
         System.out.println("Current date: " + currentDate.toString());
