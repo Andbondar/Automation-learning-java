@@ -12,9 +12,10 @@ import java.util.Arrays;
  */
 public class Task03 {
     public static void main(String[] args) {
-        int[] myArray = new int[12];
-        int minValue = -15, maxValue = 15;
-        myArray = ArrayGenerator.generateArray(12, minValue, maxValue);
+        int arraySize = 12, minValue = -15, maxValue = 15;
+        int[] myArray = new int[arraySize];
+
+        myArray = ArrayGenerator.generateArray(arraySize, minValue, maxValue);
         System.out.println("Array: " + Arrays.toString(myArray));
 
         int actualMax = minValue;
