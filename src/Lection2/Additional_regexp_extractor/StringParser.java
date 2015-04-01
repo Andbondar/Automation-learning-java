@@ -12,7 +12,7 @@ import java.util.regex.Pattern;
 // In this class string is generated and then parsed to extract the date in a specified format
 public class StringParser {
     public static void main(String[] args) {
-        String characterName = StringGenerator.GenerateOneName();//Random character name is generated
+        String characterName = CharNameGenerator.GenerateOneName();//Random character name is generated
         String birthDate = Lection2.task02.DateGenerator.getDateWithInterval(1950, 1990);//random birth date is generated. Date generator from task2 is used
 
         String analyzedString = characterName + " was born " + birthDate;
