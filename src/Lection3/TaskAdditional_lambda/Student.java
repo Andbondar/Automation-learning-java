@@ -49,7 +49,7 @@ public class Student {
         return (groupLetter.charAt(rand.nextInt(groupLetter.length())) + "-" + groupNumber);
     }
 
-    public static Student generateStudent(){
+    public static Student generateRandomStudent(){
         Student newStudent = new Student();
         newStudent.name = CharNameGenerator.GenerateOneName();
         newStudent.course = generateRandomCourse();
