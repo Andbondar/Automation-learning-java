@@ -18,15 +18,18 @@ public class task05 {
         int arr[] = new int[] {1, 6, 3, 2, 9};
         System.out.println(Arrays.toString(arr));
 
+        System.out.println();
         Arrays.fill(arr, 12);
         System.out.println(Arrays.toString(arr));
 
         int[] myArray = new int[8];
         Arrays.fill(myArray, 18);
+        System.out.println(Arrays.toString(myArray));
 
         if (Arrays.equals(arr, myArray)) System.out.println("Arrays are equal");//checks if arrays are equal
         else System.out.println("Arrays are not equal");
 
+        System.out.println();
         System.arraycopy(myArray, 2, arr, 2, 2);//copies 2 elements from myArray to arr
         System.out.println(Arrays.toString(arr));
 
