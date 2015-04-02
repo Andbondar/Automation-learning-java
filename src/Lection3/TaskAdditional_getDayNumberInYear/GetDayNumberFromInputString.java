@@ -6,6 +6,8 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
@@ -20,7 +22,11 @@ public class GetDayNumberFromInputString {
 
         Date inputDate = DateExtractor.getUnifiedDateFromString(inputString);
         System.out.println("Extracted date: " + DateExtractor.getDateFromString(inputString));
-        int[] dateArray = {inputDate.getDay(), inputDate.getMonth(), inputDate.getYear()};
+
+        //we use calendar class to avoid using deprecated methods getDay, getYear, getMonth to fill the array with dates
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(inputDate);
+        int[] dateArray = {cal.get(Calendar.DAY_OF_MONTH), cal.get(Calendar.MONTH), cal.get(Calendar.YEAR)};
         int dayNumberCalculated = 0;
         //add day counts for all previous months
         for (int i = 0; i < (dateArray[1]); i++){
