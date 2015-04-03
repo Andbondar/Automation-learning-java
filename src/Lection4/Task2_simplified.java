@@ -19,7 +19,7 @@ public class Task2_simplified {
         InputGenerator.generateRandomInputFromKeyboard(200);
 
         String inputString = reader.readLine();
-        //using org.apache.commons.lang.WordUtils; Yeah, cheats)
+        //using org.apache.commons.lang.WordUtils;   Yeah, cheats)
         System.out.println(WordUtils.capitalize(inputString));
     }
 }

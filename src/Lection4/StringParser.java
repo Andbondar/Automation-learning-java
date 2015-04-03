@@ -1,7 +1,6 @@
 package Lection4;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -51,13 +50,18 @@ public class StringParser {
         return true;
     }
 
-    //check that first character in input string is letter and if it is - change to UpperCase
-    public static String firstLetterInWordToUpperCase(String inputString){
-        char firstCharacter = inputString.charAt(0);
-        if (Character.isLetter(firstCharacter)){
-            firstCharacter = Character.toUpperCase(firstCharacter);
-            return inputString.replaceFirst("\\w", Character.toString(firstCharacter));
+    //capitalize first letter of each word in string
+    public static String capitalizeWordsInString(String string) {
+        char[] chars = string.toCharArray();
+        boolean found = false;//this variable is needed to select only First char After whitespace
+        for (int i = 0; i < chars.length; i++) {
+            if (!found && !Character.isWhitespace(chars[i])) {//change character to upper case if previous character was space and this character is not space
+                chars[i] = Character.toUpperCase(chars[i]);
+                found = true;
+            } else if (Character.isWhitespace(chars[i])) {//change found to false and search for new character after whitespace
+                found = false;
+            }
         }
-        return inputString;
+        return String.valueOf(chars);
     }
 }

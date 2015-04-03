@@ -21,14 +21,6 @@ public class Task02 {
         InputGenerator.generateRandomInputFromKeyboard(200);
 
         String inputString = reader.readLine();
-        //problem: multiple spaces are collapsed to one after splitting and building a new string. Dunno how to fix it
-        String[] splittedString =  inputString.split(" +");
-
-        System.out.println();
-        for (String aSplittedString : splittedString) {
-            System.out.print(StringParser.firstLetterInWordToUpperCase(aSplittedString) + " ");
-        }
-        System.out.println();
-
+        System.out.println(StringParser.capitalizeWordsInString(inputString));
     }
 }
