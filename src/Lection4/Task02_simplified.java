@@ -9,8 +9,12 @@ import java.io.InputStreamReader;
 
 /**
  * Created by bondar on 4/3/2015.
+ *
+ * Написать программу, которая вводит с клавиатуры строку текста.
+ Программа заменяет в тексте первые буквы всех слов на заглавные.
+ Вывести результат на экран.
  */
-public class Task2_simplified {
+public class Task02_simplified {
     public static void main(String[] args) throws IOException, AWTException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
