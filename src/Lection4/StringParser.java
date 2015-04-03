@@ -12,8 +12,8 @@ public class StringParser {
 
     }
 
+    //extracts int[] array from input strings. Every string surrounded by spaces is converted to int is possible and then added to array
     public static int[] extractNumbersFromString(String inputString){
-
         List<Integer> numberArrayList = new ArrayList<Integer>();
         int[] returnedIntArray;
         String[] splittedString =  inputString.split(" +");
