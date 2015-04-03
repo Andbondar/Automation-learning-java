@@ -1,8 +1,7 @@
-package Lection4.Task01;
+package Lection4;
 
 import Lection4.InputGenerator;
 import Lection4.StringParser;
-
 import java.awt.*;
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -22,7 +21,7 @@ public class Task01 {
 
         System.out.print("Press [ENTER] to generate random string");
         System.in.read();
-        InputGenerator.generateRandomInputFromKeyboard(25);
+        InputGenerator.generateRandomInputFromKeyboard(200);
 
         String inputString = reader.readLine();
         System.out.println(Arrays.toString(StringParser.extractNumbersFromString(inputString)));

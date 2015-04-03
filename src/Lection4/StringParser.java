@@ -14,9 +14,9 @@ public class StringParser {
 
     public static int[] extractNumbersFromString(String inputString){
 
-        List<Integer> numberArrayList = new ArrayList();
+        List<Integer> numberArrayList = new ArrayList<Integer>();
         int[] returnedIntArray;
-        String[] splittedString =  inputString.split(" ");
+        String[] splittedString =  inputString.split(" +");
         for (String aSplittedString : splittedString) {
             if (isInteger(aSplittedString)) {
                 numberArrayList.add(Integer.parseInt(aSplittedString));
@@ -49,5 +49,15 @@ public class StringParser {
             }
         }
         return true;
+    }
+
+    //check that first character in input string is letter and if it is - change to UpperCase
+    public static String firstLetterInWordToUpperCase(String inputString){
+        char firstCharacter = inputString.charAt(0);
+        if (Character.isLetter(firstCharacter)){
+            firstCharacter = Character.toUpperCase(firstCharacter);
+            return inputString.replaceFirst("\\w", Character.toString(firstCharacter));
+        }
+        return inputString;
     }
 }

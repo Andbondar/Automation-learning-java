@@ -12,16 +12,34 @@ public class InputGenerator {
 
     }
 
+    //constructor for input key possibilities
+    private int[] possibleKeys(){
+        return new int[]{
+                KeyEvent.VK_SPACE,
+                //numbers
+                KeyEvent.VK_0,
+                KeyEvent.VK_1,
+                KeyEvent.VK_2,
+                KeyEvent.VK_3,
+                KeyEvent.VK_4,
+                KeyEvent.VK_5,
+                KeyEvent.VK_6,
+                KeyEvent.VK_7,
+                KeyEvent.VK_8,
+                KeyEvent.VK_9,
+                KeyEvent.VK_A,
+                KeyEvent.VK_B,
+                KeyEvent.VK_C,
+                //dot
+                KeyEvent.VK_PERIOD
+        };
+    }
+
+    //keyboard input generator
     public static void generateRandomInputFromKeyboard(int length) throws AWTException {
         Robot robot = new Robot();
 
-        int[] possibleKeys = new int[]{
-                KeyEvent.VK_SPACE,
-                //numbers
-                KeyEvent.VK_0, KeyEvent.VK_1, KeyEvent.VK_2, KeyEvent.VK_3, KeyEvent.VK_4, KeyEvent.VK_5, KeyEvent.VK_6, KeyEvent.VK_7, KeyEvent.VK_8, KeyEvent.VK_9, KeyEvent.VK_0,
-                KeyEvent.VK_A,
-                KeyEvent.VK_PERIOD
-        };
+        int[] possibleKeys = new InputGenerator().possibleKeys();
 
         for (int i = 0; i < length; i++) {
             Random rand = new Random();
