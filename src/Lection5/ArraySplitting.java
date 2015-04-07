@@ -1,4 +1,4 @@
-package Lection05;
+package Lection5;
 
 import com.google.common.base.Joiner;
 
