@@ -8,6 +8,7 @@ import java.util.Arrays;
 /**
  * Created by bondar on 4/7/2015.
  */
+//this class will be used as internal library
 public class StringSplitting {
     public static void main(String[] args) {
 

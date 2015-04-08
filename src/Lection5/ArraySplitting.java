@@ -8,6 +8,7 @@ import java.util.StringJoiner;
 /**
  * Created by Student on 4/6/2015.
  */
+//this class will be used as internal library
 public class ArraySplitting {
     public static void main(String[] args) {
     }
