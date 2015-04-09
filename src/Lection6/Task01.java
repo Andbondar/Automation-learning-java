@@ -28,7 +28,7 @@ public class Task01 {
 
 
         GetEmployeeInfo<EmployeeOfCompanyB> johnInfo = new GetEmployeeInfo<>(john);
-        jackInfo.printName();
+        johnInfo.printName();
         johnInfo.printSalary();
 
     }
