@@ -1,5 +1,6 @@
 package Lection6;
 
+import Lection6.EmployersProcessing.Employable;
 import Lection6.EmployersProcessing.EmployeeOfCompanyA;
 import Lection6.EmployersProcessing.EmployeeOfCompanyB;
 import Lection6.EmployersProcessing.GetEmployeeInfo;
@@ -22,12 +23,12 @@ public class Task01 {
         EmployeeOfCompanyA jack = new EmployeeOfCompanyA("Jack", 120);
         EmployeeOfCompanyB john = new EmployeeOfCompanyB("John", 150);
 
-        GetEmployeeInfo<EmployeeOfCompanyA> jackInfo = new GetEmployeeInfo<>(jack);
+        GetEmployeeInfo<Employable> jackInfo = new GetEmployeeInfo<>(jack);
         jackInfo.printName();
         jackInfo.printSalary();
 
 
-        GetEmployeeInfo<EmployeeOfCompanyB> johnInfo = new GetEmployeeInfo<>(john);
+        GetEmployeeInfo<Employable> johnInfo = new GetEmployeeInfo<>(john);
         johnInfo.printName();
         johnInfo.printSalary();
 
