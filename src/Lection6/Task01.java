@@ -1,6 +1,7 @@
 package Lection6;
 
 import Lection6.EmployersProcessing.EmployeeOfCompanyA;
+import Lection6.EmployersProcessing.EmployeeOfCompanyB;
 import Lection6.EmployersProcessing.GetEmployeeInfo;
 
 /**
@@ -19,8 +20,9 @@ import Lection6.EmployersProcessing.GetEmployeeInfo;
 public class Task01 {
     public static void main(String[] args) {
         EmployeeOfCompanyA jack = new EmployeeOfCompanyA("Jack", 120);
-        GetEmployeeInfo jackInfo = new GetEmployeeInfo();
-        jackInfo.set(jack);
-        jackInfo.printSalary();
+        EmployeeOfCompanyB john = new EmployeeOfCompanyB("John", 150);
+        new GetEmployeeInfo(jack).printSalary();
+        new GetEmployeeInfo(john).printSalary();
+
     }
 }

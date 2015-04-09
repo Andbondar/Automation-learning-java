@@ -7,6 +7,13 @@ package Lection6.EmployersProcessing;
  */
 public class GetEmployeeInfo {
     private Employable inputObj;
+    //constructor
+    public GetEmployeeInfo(Employable inputObj){
+        this.inputObj = inputObj;
+    }
+    public GetEmployeeInfo() {
+        this.inputObj = null;
+    }
 
     public void printSalary(){
         float currentSalary = 0;
