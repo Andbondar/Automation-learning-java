@@ -27,11 +27,8 @@ public class GetEmployeeInfo<T> {
     }
     public void printName(){
         String currentName = "";
-        if (this.inputObj instanceof EmployeeOfCompanyA){
-            currentName = ((EmployeeOfCompanyA)inputObj).getName();
-        }
-        else if (this.inputObj instanceof EmployeeOfCompanyB){
-            currentName = ((EmployeeOfCompanyB)inputObj).getName();
+        if (this.inputObj instanceof Employable){
+            currentName = ((Employable)inputObj).getName();
         }
         System.out.println("Name: " + currentName);
     }
