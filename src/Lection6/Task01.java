@@ -18,10 +18,9 @@ import Lection6.EmployersProcessing.GetEmployeeInfo;
  */
 public class Task01 {
     public static void main(String[] args) {
-        GetEmployeeInfo<EmployeeOfCompanyA> typeA = new GetEmployeeInfo<>();
-        typeA.printSalary();
-
         EmployeeOfCompanyA jack = new EmployeeOfCompanyA("Jack", 120);
-
+        GetEmployeeInfo jackInfo = new GetEmployeeInfo();
+        jackInfo.set(jack);
+        jackInfo.printSalary();
     }
 }
