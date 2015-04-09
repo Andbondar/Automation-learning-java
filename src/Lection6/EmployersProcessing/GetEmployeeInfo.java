@@ -5,8 +5,8 @@ package Lection6.EmployersProcessing;
  * Класс GetEmployeeInfo описать как Generic, класс должен работать с типами реализующими Employable;
  Methods: printSalary(); printName();
  */
-public class GetEmployeeInfo<T> {
-    private T inputObj;
+public class GetEmployeeInfo<Employable> {
+    private Employable inputObj;
 
     public void printSalary(){
         float currentSalary = 0;
@@ -18,10 +18,10 @@ public class GetEmployeeInfo<T> {
         System.out.println("Salary: " + currentSalary);
     }
 
-    public void set(T inputType){
+    public void set(Employable inputType){
         this.inputObj = inputType;
     }
-    public T get(){
+    public Employable get(){
         return this.inputObj;
     }
 }
