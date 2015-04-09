@@ -17,14 +17,12 @@ public class GetEmployeeInfo<T> {
 
     public void printSalary(){
         float currentSalary = 0;
-        if (this.inputObj instanceof EmployeeOfCompanyA){
-            currentSalary = ((EmployeeOfCompanyA)inputObj).getSalary();
-        }
-        else if (this.inputObj instanceof EmployeeOfCompanyB){
-            currentSalary = ((EmployeeOfCompanyB)inputObj).getSalary();
+        if (this.inputObj instanceof Employable){
+            currentSalary = ((Employable)inputObj).getSalary();
         }
         System.out.println("Salary: " + currentSalary);
     }
+
     public void printName(){
         String currentName = "";
         if (this.inputObj instanceof Employable){
