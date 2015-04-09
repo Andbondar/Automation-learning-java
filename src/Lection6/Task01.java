@@ -21,8 +21,15 @@ public class Task01 {
     public static void main(String[] args) {
         EmployeeOfCompanyA jack = new EmployeeOfCompanyA("Jack", 120);
         EmployeeOfCompanyB john = new EmployeeOfCompanyB("John", 150);
-        new GetEmployeeInfo(jack).printSalary();
-        new GetEmployeeInfo(john).printSalary();
+
+        GetEmployeeInfo<EmployeeOfCompanyA> jackInfo = new GetEmployeeInfo<>(jack);
+        jackInfo.printName();
+        jackInfo.printSalary();
+
+
+        GetEmployeeInfo<EmployeeOfCompanyB> johnInfo = new GetEmployeeInfo<>(john);
+        jackInfo.printName();
+        johnInfo.printSalary();
 
     }
 }

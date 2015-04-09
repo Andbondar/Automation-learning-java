@@ -5,10 +5,10 @@ package Lection6.EmployersProcessing;
  * Класс GetEmployeeInfo описать как Generic, класс должен работать с типами реализующими Employable;
  Methods: printSalary(); printName();
  */
-public class GetEmployeeInfo {
-    private Employable inputObj;
+public class GetEmployeeInfo<T> {
+    private T inputObj;
     //constructor
-    public GetEmployeeInfo(Employable inputObj){
+    public GetEmployeeInfo(T inputObj){
         this.inputObj = inputObj;
     }
     public GetEmployeeInfo() {
@@ -17,14 +17,30 @@ public class GetEmployeeInfo {
 
     public void printSalary(){
         float currentSalary = 0;
-        currentSalary = inputObj.getSalary();
+        if (this.inputObj instanceof EmployeeOfCompanyA){
+            currentSalary = ((EmployeeOfCompanyA)inputObj).getSalary();
+        }
+        else if (this.inputObj instanceof EmployeeOfCompanyB){
+            currentSalary = ((EmployeeOfCompanyB)inputObj).getSalary();
+        }
         System.out.println("Salary: " + currentSalary);
     }
+    public void printName(){
+        String currentName = "";
+        if (this.inputObj instanceof EmployeeOfCompanyA){
+            currentName = ((EmployeeOfCompanyA)inputObj).getName();
+        }
+        else if (this.inputObj instanceof EmployeeOfCompanyB){
+            currentName = ((EmployeeOfCompanyB)inputObj).getName();
+        }
+        System.out.println("Name: " + currentName);
+    }
 
-    public void set(Employable inputType){
+
+    public void set(T inputType){
         this.inputObj = inputType;
     }
-    public Employable get(){
+    public T get(){
         return this.inputObj;
     }
 }
