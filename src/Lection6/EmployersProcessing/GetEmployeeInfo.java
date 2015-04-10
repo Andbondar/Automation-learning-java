@@ -15,6 +15,7 @@ public class GetEmployeeInfo<T> {
         this.inputObj = null;
     }
 
+    //NOTE: applicable only for objects that support Employable interface.
     public void printSalary(){
         float currentSalary = 0;
         if (this.inputObj instanceof Employable){
@@ -23,6 +24,7 @@ public class GetEmployeeInfo<T> {
         System.out.println("Salary: " + currentSalary);
     }
 
+    //NOTE: applicable only for objects that support Employable interface.
     public void printName(){
         String currentName = "";
         if (this.inputObj instanceof Employable){

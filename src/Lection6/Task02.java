@@ -22,15 +22,15 @@ import java.util.Arrays;
 public class Task02 {
     public static void main(String[] args) {
         String inputFile = "D:\\parseJava.xml";
-        System.out.println(Arrays.toString(getXMLInfoByTag(inputFile, "name")));
+        getInfo(inputFile, "name");
 
         inputFile = "D:\\config.xml";
-        System.out.println(Arrays.toString(getXMLInfoByTag(inputFile, "login")));
-        System.out.println(Arrays.toString(getXMLInfoByTag(inputFile, "envmain")));
+        getInfo(inputFile, "login");
+        getInfo(inputFile, "envmain");
     }
 
 
-    public static String[] getXMLInfoByTag(String inputFile, String tag){
+    public static ArrayList<String> getXMLInfoByTag(String inputFile, String tag){
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         factory.setIgnoringElementContentWhitespace(true);
         //Here we will store mapped data from required tags
@@ -41,8 +41,10 @@ public class Task02 {
             File file = new File(inputFile);
             Document doc = builder.parse(file);
             XPath xPath =  XPathFactory.newInstance().newXPath();
-            String strXPath = "//" + tag;//search by one tag is made
-            NodeList nodeList = (NodeList) xPath.compile(strXPath).evaluate(doc, XPathConstants.NODESET);//magic
+            //search by one tag is made
+            String strXPath = "//" + tag;
+            //list of elements with input tag is created
+            NodeList nodeList = (NodeList) xPath.compile(strXPath).evaluate(doc, XPathConstants.NODESET);
             for (int i = 0; i < nodeList.getLength(); i++) {
                 //add element to arrayList of Names
                 String addedValue = nodeList.item(i).getFirstChild().getNodeValue();
@@ -51,10 +53,10 @@ public class Task02 {
         } catch (Exception e) {
             e.printStackTrace();
         }
+        return arrStrings;
+    }
 
-        //create String[] array to be returned
-        String[] stockArr = new String[arrStrings.size()];
-        stockArr = arrStrings.toArray(stockArr);
-        return stockArr;
+    public static void getInfo(String inputFile, String tag){
+        System.out.println(Arrays.toString(getXMLInfoByTag(inputFile, tag).toArray()));
     }
 }
