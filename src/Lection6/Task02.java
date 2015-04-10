@@ -12,6 +12,7 @@ import javax.xml.xpath.XPathFactory;
 import java.io.File;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 /**
  * Created by bondar on 4/10/2015.
@@ -30,11 +31,11 @@ public class Task02 {
     }
 
 
-    public static ArrayList<String> getXMLInfoByTag(String inputFile, String tag){
+    public static List<String> getXMLInfoByTag(String inputFile, String tag){
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         factory.setIgnoringElementContentWhitespace(true);
         //Here we will store mapped data from required tags
-        ArrayList<String> arrStrings = new ArrayList<>();
+        List<String> arrStrings = new ArrayList<>();
 
         try {
             DocumentBuilder builder = factory.newDocumentBuilder();
