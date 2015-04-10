@@ -11,7 +11,6 @@ import javax.xml.xpath.XPathConstants;
 import javax.xml.xpath.XPathFactory;
 import java.io.File;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -31,7 +30,7 @@ public class Task02 {
     }
 
 
-    public static List<String> getXMLInfoByTag(String inputFile, String tag){
+    public static List<String> getXMLInfoByXPath(String inputFile, String strXPath){
         DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
         factory.setIgnoringElementContentWhitespace(true);
         //Here we will store mapped data from required tags
@@ -42,8 +41,6 @@ public class Task02 {
             File file = new File(inputFile);
             Document doc = builder.parse(file);
             XPath xPath =  XPathFactory.newInstance().newXPath();
-            //search by one tag is made
-            String strXPath = "//" + tag;
             //list of elements with input tag is created
             NodeList nodeList = (NodeList) xPath.compile(strXPath).evaluate(doc, XPathConstants.NODESET);
             for (int i = 0; i < nodeList.getLength(); i++) {
@@ -58,6 +55,7 @@ public class Task02 {
     }
 
     public static void getInfo(String inputFile, String tag){
-        System.out.println(Arrays.toString(getXMLInfoByTag(inputFile, tag).toArray()));
+        String xPath = "//" + tag;
+        System.out.println(getXMLInfoByXPath(inputFile, xPath));
     }
 }
